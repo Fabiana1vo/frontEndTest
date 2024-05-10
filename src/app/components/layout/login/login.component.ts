@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +11,12 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  visibilityIcon = "assets/icons/eyeOpen.svg";
-  altIcon = "Icone para visualizar";
-  visibilityType = 'password';
+  protected visibilityIcon = "assets/icons/eyeOpen.svg";
+  protected altIcon = "Icone para visualizar";
+  protected visibilityType = 'password';
 
   protected formBuilderService = inject(FormBuilder);
-
-
+  protected router = inject(Router);
 
   protected formLogin = this.formBuilderService.group({
     email:['abc@gmail.com', [Validators.required, Validators.email]],
@@ -26,8 +26,13 @@ export class LoginComponent {
 
 
   protected logar(){
-
     alert("Login efetuado com sucesso!")
+    const formValue = this.formLogin.value;
+
+    if(formValue.email && formValue.password){
+      const targetUrl = this.router.createUrlTree(['/home']).toString();
+      window.location.href = targetUrl;
+    }
   }
 
   protected changeVisibility(){
