@@ -1,16 +1,16 @@
 <section>
-  <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 h-screen">
+  <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 h-screen bg-[#252525] text-white">
     <div class="h-full flex items-center justify-center">
-      <div class="flex flex-col justify-around min-w-[90%] sm:min-w-[90%] md:min-w-[90%] lg:min-w-[70%] xl:min-w-[70%] 2xl:min-w-[70%] Archivo gap-10 sm:bg-transparent bg-white rounded-2xl p-5 sm:p-0 y-2">
+      <div class="flex flex-col justify-around min-w-[90%] sm:min-w-[90%] md:min-w-[90%] lg:min-w-[70%] xl:min-w-[70%] 2xl:min-w-[70%] Lato gap-10 sm:bg-transparent bg-white rounded-2xl p-5 sm:p-0 y-2">
 
         <!-- Title -->
         <div>
-          <h1>Logo</h1>
+         <img loading="eager" width="200" height="200" src="assets/images/logo.svg" alt="Logo Rick And Morty">
         </div>
 
         <div>
 
-          <div class="px-2 py-3 rounded border w-full flex gap-5 items-center">
+          <div class="px-2 py-3 rounded border border-slate-600 w-full flex gap-5 items-center">
             <!-- <span><img loading="eager" width="32" height="32" src="assets/icons/google.svg" alt="Logo do Google" loop="false"></span> -->
             <span>
               <div id="google-btn"></div>
@@ -26,23 +26,23 @@
             <div class="form_elements flex flex-col gap-5">
               <div class="email flex flex-col gap-2">
                 <label for="email">E-mail:</label>
-                <input class="py-3 bg-gray-custom rounded-lg outline-none px-2" type="text" id="email"  formControlName="email" required>
+                <input class="py-3 bg-gray-custom text-gray-900 rounded-lg outline-none focus:outline-aqua-custom px-2" type="text" id="email"  formControlName="email" required>
               </div>
               <div class="password flex flex-col gap-2">
                 <label for="password">Senha:</label>
                 <div class="flex items-center justify-end">
-                  <input class=" bg-gray-custom py-3 rounded-lg outline-none px-2 w-full" [type]="visibilityType"id="password" formControlName="password" required>
+                  <input class=" bg-gray-custom text-gray-900 py-3 rounded-lg outline-none focus:outline-aqua-custom px-2 w-full" [type]="visibilityType"id="password" formControlName="password" required>
                   <span class="absolute px-3 cursor-pointer" (click)="changeVisibility()"><img loading="eager" width="21" height="21" [src]="visibilityIcon" [alt]="altIcon"></span>
                 </div>
 
                 <div class="flex text-end justify-end py-1">
-                  <span class="text-blue-400 text-sm">Esqueceu a senha?</span>
+                  <span class="text-aqua-custom text-sm">Esqueceu a senha?</span>
                </div>
 
               </div>
             </div>
             <div class="py-5">
-              <button class="py-3 bg-blue-700 text-white w-full rounded">
+              <button class="py-3 bg-aqua-custom text-black w-full rounded">
                 <span>Entrar</span>
                 <span class="animate-spin h-5 w-5 mr-3 "></span>
               </button>
@@ -50,11 +50,13 @@
           </form>
 
         </div>
-        <div class="border flex justify-center items-center">
-          <h2 class="text-sm">Ainda não tem uma conta? <b class="text-blue-400">Cadastre-se</b></h2>
+        <div class="flex justify-center items-center">
+          <h2 class="text-sm">Ainda não tem uma conta? <b class="text-aqua-custom">Cadastre-se</b></h2>
         </div>
       </div>
     </div>
-    <div class="border border-red-600 h-full hidden sm:hidden md:hidden lg:block xl:block 2xl:block">Imagem de fundo</div>
+    <div class=" h-full hidden sm:hidden md:hidden lg:block xl:block 2xl:block bg-login-banner bg-cover bg-center">
+
+    </div>
   </div>
 </section>
